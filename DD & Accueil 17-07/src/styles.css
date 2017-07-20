@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+.presentation{
+    background: #CECECE;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    margin: auto;
+}
+
+.presentation p{
+    margin-top: 30px;
+    color: #4D5252;
+}
+.h1,
+h2,
+h3 {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
