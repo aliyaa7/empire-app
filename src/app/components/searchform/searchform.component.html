@@ -1,0 +1,14 @@
+
+<div class="container">
+  <form (ngSubmit)="startSearch()"[formGroup]="searchForm" class="form-inline well well-sm">
+    <div class="form-group col-md-5">
+      <label>Veuillez entrer un template</label>
+      <input formControlName ="title" type="texte" class="form-control" placeholder="theme">
+    </div>
+    <div class="form-group col-md-5">
+      <label>Veuillez choisir une année</label>
+      <input formControlName ="year" type="number" min="1900" max="2017" step="1" value="2016" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Rechercher</button>
+  </form>
+</div>

@@ -1,0 +1,221 @@
+
+// ecran telephone 
+
+#cellphone {
+    position: relative;
+    background-image: url(/assets/images/mockup-tel.png);
+    background-repeat: no-repeat;
+    height: 864px;
+    width: 416px;
+    display: inline-block;
+}
+
+#phone-screen {
+    position: absolute;
+    width: 380px;
+    height: 675px;
+    top: 95px;
+    left: 18px;
+    background: repeating-linear-gradient(to right, #afb1ff, #afb1ff 38px, #eeeeee 38px, #eeeeee 76px);
+    width: 381px;
+    height: 677px;
+    background-color: #bbc8d8;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Div temporaire pour contenir les elements draggable, les div sont disposer en deux collonnes sur le screen phone */
+
+.global-dragg-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    overflow: auto;
+}
+
+.col1 {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.col2 {
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    line-height: 0;
+    width: 100%;
+    border: 2px solid #fff;
+}
+
+
+// conteneur elements draggable 
+
+ 
+.conteneur-menu {
+    background-color: #222;
+    height: 830px;
+    width: 500px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+#ea-app {
+    padding: 50px 0;
+}
+
+#ea-app>.left-side {
+    float: left;
+    width: 50%;
+    min-width: 420px;
+    text-align: center;
+}
+
+#ea-app>.right-side {
+    float: right;
+    width: 50%;
+    min-width: 500px;
+    text-align: center;
+}
+
+#ea-app #cellphone,
+#ea-app #comp-app {
+    display: inline-block;
+    -webkit-box-shadow: 4px 7px 22px -3px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 7px 22px -3px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 7px 22px -3px rgba(0, 0, 0, 0.33);
+}
+
+#ea-app #cellphone {
+    border-radius: 25px 25px 25px 25px;
+    -moz-border-radius: 25px 25px 25px 25px;
+    -webkit-border-radius: 25px 25px 25px 25px;
+}
+
+.clear {
+    clear: both;
+}
+
+
+// elements draggable 
+
+.elements_DD {
+    height: 864px;
+    width: 441px;
+    position: relative;
+    float: right;
+    /*background-color: #bbc8d8;*/
+    margin-right: 20px;
+}
+
+
+#moustache {
+    height: 200px;
+    width: 100px
+}
+
+#button1 {
+    height: 46px;
+    line-height: 30px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #313943;
+    color: #fff;
+    border-radius: 17px;
+}
+
+#button2 {
+    height: 46px;
+    line-height: 30px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #1fcfcb;
+    color: #fff;
+    border-radius: 17px;
+}
+
+#button3 {
+    height: 46px;
+    line-height: 30px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #313943;
+    color: #1fcfcb;
+    border-radius: 17px;
+}
+
+#button4 {
+    height: 46px;
+    line-height: 30px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #313943;
+    color: #fff;
+    border-radius: 17px;
+}
+
+#button5 {
+    height: 46px;
+    line-height: 30px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #313943;
+    color: #fff;
+    border-radius: 17px;
+}
+
+// calendrier
+.ao-calendar {
+    background-color: #1fcfcb;
+    color: white;
+    width: 100px;
+    height: 100px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#l-1 {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+#l-2 {
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+#l-3 {
+    font-size: 3px;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+#l-4 {
+    font-size: 3px;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+// textarea
+#ta-t1 {
+    width: 190px;
+}
+

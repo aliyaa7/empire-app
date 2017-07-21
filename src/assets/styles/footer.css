@@ -1,0 +1,28 @@
+
+.h1, h2, h3{
+text-align: center;
+font-family: 'Lato', sans-serif;
+}
+
+.footercontainer {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+      margin-top: 20px;
+
+}
+
+
+[class*="col-"] {
+  border-radius: 6px;
+  line-height: 40px;
+  text-align: center;
+  }
+
+  .btn-lg
+        {
+          width: 52px;
+          height: 52px;
+          border-radius: 30px;
+        }
