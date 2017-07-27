@@ -1,0 +1,30 @@
+.page{
+    background-color: #CECECE;
+    margin-top:0;
+    padding-top:0;
+    font-family: 'Lato', sans-serif;
+}
+
+.header,h1{
+    text-align: center;
+    margin-top:0;
+    margin-bottom: 30px;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-horizontal{
+
+    margin-top: 50px;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-horizontal, fieldset, legend{
+   font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+.form-group{
+   margin-top: 20px;
+   margin-bottom: 40px;
+   font-family: 'Lato', sans-serif;
+}

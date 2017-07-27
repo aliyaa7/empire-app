@@ -1,0 +1,255 @@
+<!--h1>
+    {{getTitle()}}
+</h1>
+<div class="toolbar">
+    Lanes:
+    <button (click)="removeLine(gridster)">-</button> {{ gridsterOptions.lanes }}
+    <button (click)="addLine(gridster)">+</button>
+
+    <button (click)="addWidgetWithoutData()">
+        Add widget without data
+    </button>
+    <br>
+    <label for="ratio">Ratio</label><input type="number" id="ratio" [(ngModel)]="gridsterOptions.widthHeightRatio" min="0.1"
+        (change)="gridster.setOption('widthHeightRatio', gridsterOptions.widthHeightRatio).reload()">
+
+    <input id="draggable" type="checkbox" [(ngModel)]="gridsterOptions.dragAndDrop" value="true" (change)="gridster.setOption('dragAndDrop', gridsterOptions.dragAndDrop)">
+    <label for="draggable">Draggable</label>
+
+    <input type="checkbox" [(ngModel)]="gridsterOptions.resizable" value="true" id="resizable" (change)="gridster.setOption('resizable', gridsterOptions.resizable)">
+    <label for="resizable">Resizable</label>
+    <br> Direction
+    <label>
+        <input type="radio" [(ngModel)]="gridsterOptions.direction" value="horizontal"
+               (change)="gridster.setOption('direction', 'horizontal').reload()">Horizontal
+    </label>
+    <label>
+        <input type="radio" [(ngModel)]="gridsterOptions.direction" value="vertical"
+               (change)="gridster.setOption('direction', 'vertical').reload()">Vertical
+    </label>
+    <br> Max item size: {{itemOptions.maxWidth}} x {{itemOptions.maxHeight}}
+</div>
+<div class="widgetbar">
+    <div gridsterItemPrototype [config]="{helper: true}" [w]="1" [h]="1" (drop)="addWidgetFromDrag(gridster, $event)" (enter)="over($event)"
+        (out)="out($event)" class="gridster-item-prototype">
+        Drag me (clone)<br> 1x1
+        <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+            <div _ngcontent-uoe-2="" class="panel-heading">
+                <h5 _ngcontent-uoe-2="" class="panel-title">New widget</h5>
+            </div>
+        </div>
+    </div>
+
+    <div gridsterItemPrototype [config]="{helper: true}" [w]="1" [h]="2" (drop)="addWidgetFromDrag(gridster, $event)" (enter)="over($event)"
+        (out)="out($event)" class="gridster-item-prototype">
+        Drag me (clone)<br> 1x2
+        <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+            <div _ngcontent-uoe-2="" class="panel-heading">
+                <h5 _ngcontent-uoe-2="" class="panel-title">New widget</h5>
+            </div>
+        </div>
+    </div>
+
+    <div gridsterItemPrototype [config]="{helper: false}" [w]="2" [h]="1" (drop)="addWidgetFromDrag(gridster, $event)" (enter)="over($event)"
+        (out)="out($event)" class="gridster-item-prototype">
+        Drag me <br> 2x1
+        <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+            <div _ngcontent-uoe-2="" class="panel-heading">
+                <h5 _ngcontent-uoe-2="" class="panel-title">New widget</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-content">
+
+    <gridster [options]="gridsterOptions" [draggableOptions]="gridsterDraggableOptions" (optionsChange)="optionsChange($event)"
+        #gridster1 style="min-height: 500px;">
+
+        <gridster-item *ngFor="let widget of widgets; let indx = index" #itemComp [options]="itemOptions" [dragAndDrop]="widget.dragAndDrop"
+            [resizable]="widget.resizable" [(x)]="widget.x" [(y)]="widget.y" [(xSm)]="widget.xSm" [(ySm)]="widget.ySm" [(xMd)]="widget.xMd"
+            [(yMd)]="widget.yMd" [(xLg)]="widget.xLg" [(yLg)]="widget.yLg" [(xXl)]="widget.xXl" [(yXl)]="widget.yXl" [(w)]="widget.w"
+            [(h)]="widget.h" (change)="itemChange($event, gridster1)">
+
+            <div class="panel-heading">
+                <h5 class="panel-title">{{ widget.title }}</h5>
+            </div>
+
+            <div class="panel-body">
+
+                <p>
+                    <label>
+                        <input type="checkbox" [(ngModel)]="widget.dragAndDrop" value="true"> Draggable
+                    </label>
+                    <label>
+                        <input type="checkbox" [(ngModel)]="widget.resizable" value="true"> Resizable
+                    </label>
+                    <button (click)="setWidth(widget, widget.w+1, $event, gridster1)">width +</button>
+                    <button (click)="setWidth(widget, widget.w-1, $event, gridster1)">width -</button>
+                    <button (click)="setHeight(widget, widget.h+1, $event, gridster1)">height +</button>
+                    <button (click)="setHeight(widget, widget.h-1, $event, gridster1)">height -</button>
+                </p>
+                <p>
+                    <button (click)="remove($event, indx,gridster1)">remove</button>
+                </p>
+                <p>
+                    Position: {{itemComp?.item?.x}} x {{itemComp?.item?.y}}<br> Size: {{widget.w}} x {{widget.h}}
+                </p>
+                <pre style="position: absolute">{{ widget | json }}</pre>
+            </div>
+
+        </gridster-item>
+
+    </gridster>
+</div-->
+<!-- Telephone -->
+
+<div id="ea-app">
+
+    <label for="ratio">Ratio</label><input type="number" id="ratio" [(ngModel)]="gridsterOptions.widthHeightRatio" min="0.1"
+        (change)="gridster.setOption('widthHeightRatio', gridsterOptions.widthHeightRatio).reload()">
+
+    <input id="draggable" type="checkbox" [(ngModel)]="gridsterOptions.dragAndDrop" value="true" (change)="gridster.setOption('dragAndDrop', gridsterOptions.dragAndDrop)">
+    <label for="draggable">Draggable</label>
+
+    <input type="checkbox" [(ngModel)]="gridsterOptions.resizable" value="true" id="resizable" (change)="gridster.setOption('resizable', gridsterOptions.resizable)">
+    <label for="resizable">Resizable</label>
+    <br>
+    <div class="left-side">
+        <div id="cellphone">
+            <div id="phone-screen">
+                <div class="global-dragg-screen">
+         
+
+                        <gridster [options]="gridsterOptions" [draggableOptions]="gridsterDraggableOptions" (optionsChange)="optionsChange($event)"
+                            #gridster1 style="min-height: 500px;">
+
+                            <gridster-item *ngFor="let widget of widgets; let indx = index" #itemComp [options]="itemOptions" [dragAndDrop]="widget.dragAndDrop"
+                                [resizable]="widget.resizable" [(x)]="widget.x" [(y)]="widget.y" [(xSm)]="widget.xSm" [(ySm)]="widget.ySm"
+                                [(xMd)]="widget.xMd" [(yMd)]="widget.yMd" [(xLg)]="widget.xLg" [(yLg)]="widget.yLg" [(xXl)]="widget.xXl"
+                                [(yXl)]="widget.yXl" [(w)]="widget.w" [(h)]="widget.h" (change)="itemChange($event, gridster1)">
+
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">{{ widget.title }}</h5>
+                                </div>
+
+                                <div class="panel-body">
+
+                                    <p>
+                                        <label>
+                        <input type="checkbox" [(ngModel)]="widget.dragAndDrop" value="true"> Draggable
+                    </label>
+                                        <label>
+                        <input type="checkbox" [(ngModel)]="widget.resizable" value="true"> Resizable
+                    </label>
+                                        <button (click)="setWidth(widget, widget.w+1, $event, gridster1)">width +</button>
+                                        <button (click)="setWidth(widget, widget.w-1, $event, gridster1)">width -</button>
+                                        <button (click)="setHeight(widget, widget.h+1, $event, gridster1)">height +</button>
+                                        <button (click)="setHeight(widget, widget.h-1, $event, gridster1)">height -</button>
+                                    </p>
+                                    <p>
+                                        <button (click)="remove($event, indx,gridster1)">remove</button>
+                                    </p>
+                                    <p>
+                                        Position: {{itemComp?.item?.x}} x {{itemComp?.item?.y}}<br> Size: {{widget.w}} x
+                                        {{widget.h}}
+                                    </p>
+                                    <pre style="position: absolute">{{ widget | json }}</pre>
+                                </div>
+
+                            </gridster-item>
+
+                        </gridster>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Element draggable -->
+<div class="right-side">
+    <div class="toolbar">
+        Lanes:
+        <button (click)="removeLine(gridster)">-</button> {{ gridsterOptions.lanes }}
+        <button (click)="addLine(gridster)">+</button>
+
+        <button (click)="addWidgetWithoutData()">
+        Add widget without data
+    </button>
+        <br>
+        <div class='wrapper'>
+            <label>
+        <input type="radio" [(ngModel)]="gridsterOptions.direction" value="horizontal"
+               (change)="gridster.setOption('direction', 'horizontal').reload()">Horizontal
+    </label>
+            <label>
+        <input type="radio" [(ngModel)]="gridsterOptions.direction" value="vertical"
+               (change)="gridster.setOption('direction', 'vertical').reload()">Vertical
+    </label>
+            <br> Max item size: {{itemOptions.maxWidth}} x {{itemOptions.maxHeight}}
+
+            <div class="widgetbar">
+                <div gridsterItemPrototype [config]="{helper: true}" [w]="1" [h]="1" (drop)="addWidgetFromDrag(gridster, $event)" (enter)="over($event)"
+                    (out)="out($event)" class="gridster-item-prototype">
+                    Drag me (clone)<br> 1x1
+                    <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+                        <div _ngcontent-uoe-2="" class="panel-heading">
+                            <h5 _ngcontent-uoe-2="" class="panel-title">New widget</h5>
+                        </div>
+                    </div>
+                    <div gridsterItemPrototype [config]="{helper: true}" [w]="1" [h]="2" (drop)="addWidgetFromDrag(gridster, $event)" (enter)="over($event)"
+                        (out)="out($event)" class="gridster-item-prototype">
+                        Drag me (clone)<br> 1x2
+                        <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+                            <div _ngcontent-uoe-2="" class="panel-heading">
+                                <h5 _ngcontent-uoe-2="" class="panel-title">New widget</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div gridsterItemPrototype [config]="{helper: false}" [w]="2" [h]="1" (drop)="addWidgetFromDrag(gridster, $event)" (enter)="over($event)"
+                        (out)="out($event)" class="gridster-item-prototype" id = "testbaby">
+                        Drag me <br> 2x1
+                        <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+                            <div _ngcontent-uoe-2="" class="panel-heading">
+                                <h5 _ngcontent-uoe-2="" class="panel-title">New widget</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!--<div class="right-side">
+				<div id="comp-app" class="conteneur-menu">
+					<div [dragula]='"fifth-bag"' class="elements_DD">
+						<div><input type="button" value="button 1" id="button1"></div>
+						<div><textarea type="text" id="ta-t1">Inserez votre text ici. 
+						Redimensionnez la taille du block</textarea></div>
+						<div><img id="moustache" src="assets/images/03.png"></div>
+						<div><input type="button" value="button 2" id="button2"></div>
+						<div><input type="button" value="button 3" id="button3"></div>
+						<div><input type="button" value="button 4" id="button4"></div>
+						<div> </div>
+						<div class="ao-calendar">Calendrier
+							<p id="l-1"> L M M J V S D </p>
+							<p id="l-2"> 1 2 3 4 5 6 7 </p>
+							<p id="l-3"> 8 9 10 11 12 13 14</p>
+							<p id="l-4"> 15 16 17 18 19 20 21 </p>
+						</div>
+					</div>
+				</div>-->
+        </div>
+    </div>
+</div>
+
+
+<div class="clear"></div>
+
+<footer>
