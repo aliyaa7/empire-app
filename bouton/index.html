@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Afficher / Cacher une boite div en javascript</title>
+    <link rel="stylesheet" title="style de la page" href="C:\Users\MMOUSSACEB\Desktop\bouton\assets\css\index.css" />
+    <script type="text/javascript" src="C:\Users\MMOUSSACEB\Desktop\bouton\assets\js\index.js"></script>
+
+</head>
+
+<body>
+    <button type="button-param" onclick="showDiv(true);">Parametre</button>
+
+    <div id="panel">
+       <form>
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for="titre">Composant:</label>
+                        <select name="composant" id="composants">
+                            <option value="Bouton">Bouton</option>
+                            <option value="Input">Input</option>
+                            <option value="Text Area">Text Area</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="Largeur">Largeur:</label>
+                        <input class="input" id="input1">px</input>
+
+                    </li>
+                    <li>
+                        <label for="Hauteur">Hauteur:</label>
+                        <input class="input" id="input2">px</input>
+
+                    </li>
+                    <li>
+                        <label for="Largeur">Position X:</label>
+                        <input class="input" id="input3">px</input>
+
+                    </li>
+                    <li>
+                        <label for="Largeur">Position Y:</label>
+                        <input class="input" id="input4">px</input>
+
+                    </li>
+                    <li>
+                        <label for="Couleur">Couleur:</label>
+                        <input type="color" classe: "couleur" id="input_couleur"/>
+
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <button class="bouton" id="bouton_texte">Appliquer</button>
+        <button class="bouton" id="bouton_fermer" onclick="showDiv(false);">Fermer</button>
+
+    </div>
+
+</body>
+
+</html>
