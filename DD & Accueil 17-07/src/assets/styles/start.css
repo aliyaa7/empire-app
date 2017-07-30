@@ -1,0 +1,32 @@
+
+.boutton{
+	margin-top:20px;
+}
+#lien_button{
+    width:110px;
+	cursor:pointer;
+	text-transform:capitalize;
+	font-family: 'Lato', sans-serif;
+    background-color:#CECECE;
+    
+}
+
+
+.start{
+    text-decoration-line: none;
+    display: block;
+    margin: auto;
+    width:90px;
+	height:90px;
+	background:#83F8FF;
+	box-shadow:2px 2px 8px #CECECE;
+	font:bold 13px 'Lato', sans-serif;
+	border-radius:50%;
+	color:#4D5252;
+	outline: none;
+	font-family: 'Lato', sans-serif;
+	
+
+}
+
+

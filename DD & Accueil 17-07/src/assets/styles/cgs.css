@@ -1,0 +1,31 @@
+.page{
+    background-color:  #CECECE;
+    font-family: 'Lato', sans-serif;
+}
+.header, h1{
+color: #4D5252;
+text-align: center;
+margin-top: 60px;
+margin-bottom: 60px;
+}
+
+.div, h3{
+color: #4D5252;
+}
+.ul, li{
+
+    color: #4D5252;
+}
+
+.container, p{
+color: #4D5252;
+text-align: justify;
+}
+
+ [class*="col"] { 
+     
+     text-align: center;
+     margin-top: 20px;
+     margin-bottom: 20px;
+    
+}
