@@ -1,14 +1,14 @@
-import { AngularExemplePage } from './app.po';
+import { DemoPage } from './app.po';
 
-describe('angular-exemple App', () => {
-  let page: AngularExemplePage;
+describe('demo App', () => {
+  let page: DemoPage;
 
   beforeEach(() => {
-    page = new AngularExemplePage();
+    page = new DemoPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
