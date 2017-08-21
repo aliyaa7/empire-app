@@ -7,13 +7,13 @@ import { ISubscription, Subscription } from 'rxjs/Subscription';
 
 import { GridsterService } from '../gridster.service';
 import { GridListItem } from '../gridList/GridListItem';
-import {DraggableEvent} from '../util/DraggableEvent';
-import {Draggable} from '../util/draggable';
+import {DraggableEvent} from '../utils/DraggableEvent';
+import {Draggable} from '../utils/draggable';
 import {IGridsterOptions} from '../IGridsterOptions';
 import {GridList} from '../gridList/gridList';
 
 @Component({
-    selector: 'app-gridster-item',
+    selector: 'gridster-item',
     template: `<div class="gridster-item-inner">
       <ng-content></ng-content>
       <div class="gridster-item-resizable-handler handle-s"></div>
@@ -181,8 +181,8 @@ export class GridsterItemComponent implements OnInit, OnChanges, AfterViewInit, 
     private defaultOptions: any = {
         minWidth: 1,
         minHeight: 1,
-        maxWidth: null,
-        maxHeight: null,
+        maxWidth: Infinity,
+        maxHeight: Infinity,
         defaultWidth: 1,
         defaultHeight: 1
     };
@@ -215,11 +215,9 @@ export class GridsterItemComponent implements OnInit, OnChanges, AfterViewInit, 
         if (this.gridster.isInitialized()) {
             if (this.x || this.x === 0) {
                 this.item.setValueX(this.x, this.gridster.options.breakpoint);
-                this.x = null;
             }
             if (this.y || this.y === 0) {
                 this.item.setValueY(this.y, this.gridster.options.breakpoint);
-                this.y = null;
             }
             this.setPositionsOnItem();
         }

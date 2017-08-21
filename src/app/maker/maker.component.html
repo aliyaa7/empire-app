@@ -1,0 +1,76 @@
+<!-- widget prototype drag-->
+
+<div class="widgetbar">
+    <!-- prototype Standard - texte -->
+    <div gridsterItemPrototype [config]="{helper: true}" [w]="1" [h]="1" (drop)="addWidgetFromDrag(gridster, $event, 'standard')" (enter)="over($event)" (out)="out($event)" class="gridster-item-prototype">
+        <i class="fa fa-pencil-square-o fa-5x" aria-hidden="true"></i>
+        <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+            <div _ngcontent-uoe-2="" class="panel-heading">
+                <h5 _ngcontent-uoe-2="" class="panel-title">Standard</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- prototype Boutton -->
+    <div gridsterItemPrototype [config]="{helper: true}" [w]="1" [h]="1" (drop)="addWidgetFromDrag(gridster, $event, 'button')" (enter)="over($event)" (out)="out($event)" class="gridster-item-prototype">
+        <i class="fa fa-diamond fa-5x" aria-hidden="true"></i>
+        <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+            <div _ngcontent-uoe-2="" class="panel-heading">
+                <h5 _ngcontent-uoe-2="" class="panel-title">Bouton</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- prototype Image  -->
+
+    <div gridsterItemPrototype [config]="{helper: true}" [w]="1" [h]="1" (drop)="addWidgetFromDrag(gridster, $event, 'image')" (enter)="over($event)" (out)="out($event)" class="gridster-item-prototype">
+        <i class="fa fa-camera-retro fa-5x" aria-hidden="true"></i>
+        <div _ngcontent-uoe-1="" class="gridster-item-inner" style="width: 0;height: 0;">
+            <div _ngcontent-uoe-2="" class="panel-heading">
+                <h5 _ngcontent-uoe-2="" class="panel-title">Image</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main-content">
+
+    <!-- widget - drop -->
+    <div id="cellphone">
+        <div id="phone-screen">
+            <div class="global-dragg-screen">
+
+                <gridster [options]="gridsterOptions" [draggableOptions]="gridsterDraggableOptions" (optionsChange)="optionsChange($event)" #gridster1 style="min-height: 200px;">
+                    <gridster-item *ngFor="let widget of widgets; let indx = index" #itemComp [options]="itemOptions" [dragAndDrop]="widget.dragAndDrop" [resizable]="widget.resizable" [(x)]="widget.x" [(y)]="widget.y" [(xSm)]="widget.xSm" [(ySm)]="widget.ySm" [(xMd)]="widget.xMd"
+                        [(yMd)]="widget.yMd" [(xLg)]="widget.xLg" [(yLg)]="widget.yLg" [(xXl)]="widget.xXl" [(yXl)]="widget.yXl" [(w)]="widget.w" [(h)]="widget.h" (change)="itemChange($event, gridster1)">
+
+                        <!-- titre - type & bouttons custom -->
+
+                        <div class="panel-heading">
+                            <span class="panel-title">{{ widget.title }}</span>
+                            <span class="panel-type">  type: {{ widget.type }}</span>
+                            <i class="fa fa-pencil-square-o icon" aria-hidden="true" (click)="modalOptions.open(widget)"></i>
+                            <i class="fa fa-times icon" aria-hidden="true" (click)="remove($event, indx,gridster1)"></i>
+                            <i class="fa fa-paint-brush" aria-hidden="true" (click)="toggle=!toggle;lastColor=color" #ignoredButton></i>
+                        </div>
+
+                        <!-- contenu du widget -->
+
+                        <div class="panel-body">
+                            <div class="type-{{widget.type}} type-content">
+                                <span #ignoredInput [(colorPicker)]="color" cpPositionRelativeToArrow="true" [(cpToggle)]="toggle" [style.color]="color" [cpPosition]="'right'" [cpIgnoredElements]="[ignoredButton, ignoredInput]" class="content" [innerHTML]="widget.content"></span>
+                            </div>
+                        </div>
+
+                    </gridster-item>
+                </gridster>
+
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- modal - edition contenu, json etc .. -->
+
+<app-modal-options #modalOptions></app-modal-options>

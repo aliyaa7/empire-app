@@ -12,8 +12,8 @@ import 'rxjs/add/operator/takeUntil';
 import { GridsterPrototypeService } from './gridster-prototype.service';
 import {GridListItem} from '../gridList/GridListItem';
 import {GridsterService} from '../gridster.service';
-import {DraggableEvent} from '../util/DraggableEvent';
-import {Draggable} from '../util/draggable';
+import {DraggableEvent} from '../utils/DraggableEvent';
+import {Draggable} from '../utils/draggable';
 
 @Directive({
     selector: '[gridsterItemPrototype]'

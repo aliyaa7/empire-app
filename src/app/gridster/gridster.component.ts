@@ -17,7 +17,6 @@ import {GridsterOptions} from './GridsterOptions';
 
 
 @Component({
-    // tslint:disable-next-line:component-selector
     selector: 'gridster',
     template: `<div class="gridster-container">
       <ng-content></ng-content>
@@ -180,7 +179,7 @@ export class GridsterComponent implements OnInit, AfterViewInit, OnDestroy {
         return this;
     }
 
-    private updateGridsterElementData() {
+    updateGridsterElementData() {
         this.gridster.gridsterRect = this.$element.getBoundingClientRect();
     }
 

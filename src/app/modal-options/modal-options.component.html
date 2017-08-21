@@ -1,0 +1,55 @@
+<ng-template #modal>
+
+  <!-- header -->
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Options</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- body -->
+  <div class="modal-body">
+    <div>
+      <!--p>
+        <label for="moc-draggable">Draggable</label>
+        <input type="checkbox" [(ngModel)]="widget.dragAndDrop" value="true" id="moc-draggable">
+
+        <label for="moc-resizable">Resizable</label>
+        <input type="checkbox" [(ngModel)]="widget.resizable" value="true" id="moc-resizable">
+      </p-->
+
+      <p>
+        <label for="moc-title">Titre</label>
+        <input type="text" [(ngModel)]="widget.title" value="true" id="moc-title">
+      </p>
+
+      <p>
+        <label for="moc-title">Contenu</label>
+        <textarea [(ngModel)]="widget.content" value="true" id="moc-title"></textarea>
+      </p>
+
+      <image-upload [(ngModel)]="widget.content" [ngModelOptions]="{standalone: true}" 
+      value="true" id="moc-upload" url="https://httpbin.org/status/200" (onFileUploadFinish)="imageFinishedUploading($event)" ngDefaultControl></image-upload>
+
+      <!-- button (click)="setWidth(widget, widget.w+1, $event, gridster1)">width +</button>
+      <button (click)="setWidth(widget, widget.w-1, $event, gridster1)">width -</button>
+      <button (click)="setHeight(widget, widget.h+1, $event, gridster1)">height +</button>
+      <button (click)="setHeight(widget, widget.h-1, $event, gridster1)">height -</button -->
+
+    </div>
+
+    <p>
+      Position: {{itemComp?.item?.x}} x {{itemComp?.item?.y}}<br> Size: {{widget.w}} x {{widget.h}}
+    </p>
+
+    <pre>{{ widget | json }}</pre>
+  </div>
+
+  <!-- footer -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
+  </div>
+
+  <!--https://httpbin.org/status/200-->
+</ng-template>
