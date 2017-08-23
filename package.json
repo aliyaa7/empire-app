@@ -25,6 +25,7 @@
     "angular4-color-picker": "^1.4.2",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
+    "ng-color": "^3.0.8",
     "ngx-bootstrap": "^1.8.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
